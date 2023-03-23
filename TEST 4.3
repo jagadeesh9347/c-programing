@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void reverseArray(int arr[], int size) {
+   int start = 0;
+   int end = size - 1;
+   while (start < end) {
+      // Swap elements at start and end positions
+      int temp = arr[start];
+      arr[start] = arr[end];
+      arr[end] = temp;
+      start++;
+      end--;
+   }
+}
+
+int main() {
+   int arr[] = {16, 18, 27, 16, 23, 21, 19};
+   int size = sizeof(arr) / sizeof(arr[0]);
+
+   printf("Original Array elements: ");
+   for (int i = 0; i < size; i++) {
+      printf("%d ", arr[i]);
+   }
+
+   // Call function to reverse array
+   reverseArray(arr, size);
+
+   printf("\nReverse Array elements: ");
+   for (int i = 0; i < size; i++) {
+      printf("%d ", arr[i]);
+   }
+   return 0;
+}
