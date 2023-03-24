@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    char *p = str;
+    int vowels = 0, consonants = 0;
+
+    printf("Input a string: ");
+    fgets(str, 100, stdin);
+
+    while (*p) {
+        if (isalpha(*p)) {
+            switch (tolower(*p)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    vowels++;
+                    break;
+                default:
+                    consonants++;
+                    break;
+            }
+        }
+        p++;
+    }
+
+    printf("Number of vowels: %d\n", vowels);
+    printf("Number of consonants: %d\n", consonants);
+
+    return 0;
+}
+
+OUTPUT;
+
+Input a string: jagadeesh
+Number of vowels: 4
+Number of consonants: 5
